@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #moneyMan{
+            object-fit: none;
+            object-position: right;
+        }
+    </style>
+    <script>
+    function money(){
+    quarter = document.getElementById("quarters");
+    quarterVal = document.getElementById("quartersVal");
+    quarterNum = 0;
+
+
+    dime = document.getElementById("dimes");
+    dimeVal = document.getElementById("dimesVal");
+    dimeNum = 0;
+
+
+    nickel = document.getElementById("nickels");
+    nickelVal = document.getElementById("nickelsVal");
+    nickelNum = 0;
+
+
+    penny = document.getElementById("pennies");
+    pennyVal = document.getElementById("penniesVal");
+    pennyNum = 0;
+
+
+    totalVal = document.getElementById("total");
+    }
+
+    function quarterAdd(){
+        quarterNum++;
+        quarter.innerHTML = quarterNum;
+        quarterVal.innerHTML = quarterNum * 0.25;
+        totalVal.innerHTML = (quarterNum * 0.25) + (dimeNum * 0.10) + (nickelNum * 0.05) + (pennyNum * 0.01);
+    }
+
+    function quarterSubtract(){  
+        quarterNum--;
+        if(quarterNum < 0){
+            quarterNum = 0;
+        }
+        quarter.innerHTML = quarterNum;
+        quarterVal.innerHTML = quarterNum * 0.25;
+        totalVal.innerHTML = (quarterNum * 0.25) + (dimeNum * 0.10) + (nickelNum * 0.05) + (pennyNum * 0.01);
+    }
+
+    function dimeAdd(){
+        dimeNum++;
+        dime.innerHTML = dimeNum;
+        dimeVal.innerHTML = dimeNum * 0.10;
+        totalVal.innerHTML = (quarterNum * 0.25) + (dimeNum * 0.10) + (nickelNum * 0.05) + (pennyNum * 0.01);
+    }
+
+    function dimeSubtract(){
+        dimeNum--;
+        if(dimeNum < 0){
+            dimeNum = 0;
+        }
+        dime.innerHTML = dimeNum;
+        dimeVal.innerHTML = dimeNum * 0.10;
+        totalVal.innerHTML = (quarterNum * 0.25) + (dimeNum * 0.10) + (nickelNum * 0.05) + (pennyNum * 0.01);
+    }
+
+    function nickelAdd(){
+        nickelNum++;
+        nickel.innerHTML = nickelNum;
+        nickelVal.innerHTML = nickelNum * 0.05;
+        totalVal.innerHTML = (quarterNum * 0.25) + (dimeNum * 0.10) + (nickelNum * 0.05) + (pennyNum * 0.01);
+    }
+
+    function nickelSubtract(){
+        nickelNum--;
+        if(nickelNum < 0){
+            nickelNum = 0;
+        }
+        nickel.innerHTML = nickelNum;
+        nickelVal.innerHTML = nickelNum * 0.05;
+        totalVal.innerHTML = (quarterNum * 0.25) + (dimeNum * 0.10) + (nickelNum * 0.05) + (pennyNum * 0.01);
+    }
+
+    function pennyAdd(){
+        pennyNum++;
+        penny.innerHTML = pennyNum;
+        pennyVal.innerHTML = pennyNum * 0.01;
+        totalVal.innerHTML = (quarterNum * 0.25) + (dimeNum * 0.10) + (nickelNum * 0.05) + (pennyNum * 0.01);
+    }
+
+    function pennySubtract(){
+        pennyNum--;
+        if(pennyNum < 0){
+            pennyNum = 0;
+        }
+        penny.innerHTML = pennyNum;
+        pennyVal.innerHTML = pennyNum * 0.01;
+        totalVal.innerHTML = (quarterNum * 0.25) + (dimeNum * 0.10) + (nickelNum * 0.05) + (pennyNum * 0.01);
+    }
+    </script>
+</head>
+<body onload="money();">
+    <p>Quarters: <span id="quarters"> 0 </span></p>
+    <p>Value: <span id="quartersVal"> 0 </span></p>
+    <button onclick="quarterAdd();">add</button>
+    <button onclick="quarterSubtract();">subtract</button>
+
+    <p>Dimes: <span id="dimes"> 0 </span></p>
+    <p>Value: <span id="dimesVal"> 0 </span></p>
+    <button onclick="dimeAdd();">add</button>
+    <button onclick="dimeSubtract();">subtract</button>
+
+    <p>Nickels: <span id="nickels"> 0 </span></p>
+    <p>Value: <span id="nickelsVal"> 0 </span></p>
+    <button onclick="nickelAdd();">add</button>
+    <button onclick="nickelSubtract();">subtract</button>
+
+    <p>Pennies: <span id="pennies"> 0 </span></p>
+    <p>Value: <span id="penniesVal"> 0 </span></p>
+    <button onclick="pennyAdd();">add</button>
+    <button onclick="pennySubtract();">subtract</button>
+
+    <p>Total Value: <span id="total"> 0 </span></p>
+
+    <img id="moneyMan"src="deMoneyBags.png" alt="Money Guy">
+</body>
+</html>
+
+
